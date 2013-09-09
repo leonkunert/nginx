@@ -5,17 +5,18 @@ my nginx config for owncloud
 
 
 #OwnCloud
+`
 server {
- server_name cloud.leonkunert.de cloud.xn--in-fka.de;
+ server_name servername;
  return 301 https://$server_name$request_uri;  # enforce https
 }
-
+`
 # owncloud (ssl/tls)
 server {
   listen 443 ssl;
-  ssl_certificate /etc/nginx/certs/ssl.crt;
-  ssl_certificate_key /etc/nginx/certs/ssl.key;
-  server_name cloud.leonkunert.de cloud.xn--in-fka.de;
+  ssl_certificate certificate;
+  ssl_certificate_key certificate
+  server_name servername
   root /var/www/vhosts/owncloud;
   index index.php;
   client_max_body_size 1000M; # set maximum upload size
