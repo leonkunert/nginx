@@ -12,6 +12,7 @@ server {
 }
 `
 # owncloud (ssl/tls)
+`
 server {
   listen 443 ssl;
   ssl_certificate certificate;
@@ -49,3 +50,4 @@ server {
     include fastcgi_params;
   }
 }
+`
