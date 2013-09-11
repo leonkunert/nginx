@@ -5,13 +5,14 @@ my nginx config for owncloud
 
 
 #OwnCloud
-`
+```
 server {
  server_name servername;
  return 301 https://$server_name$request_uri;  # enforce https
 }
-`
+```
 # owncloud (ssl/tls)
+```
 server {
   listen 443 ssl;
   ssl_certificate certificate;
@@ -49,3 +50,4 @@ server {
     include fastcgi_params;
   }
 }
+```
